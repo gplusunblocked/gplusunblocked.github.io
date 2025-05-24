@@ -1,12 +1,10 @@
-baseURL = "https://gplusunblocked.github.io/"
+baseURL = "https://gplusunblocked.github.io"
 languageCode = "en"
 defaultContentLanguage = "en"
 theme = "revws"
 buildFuture = true
 contentDir = "content"
 publishDir = "public"
-relativeURLs = true
-canonifyURLs = false
 
 [pagination]
   pagerSize = 5
@@ -26,45 +24,52 @@ canonifyURLs = false
   ignoreLogs = ['warning-goldmark-raw-html']
 
 [languages]
+
   [languages.en]
-    title = "revWhiteShadow | Android Modding & Development"
+  title = "revWhiteShadow | Android Modding & Development"
 
     [languages.en.params]
-      subtitle = "Fast. Clean. Optimized."
-      keywords = "Magisk modules, Android development, custom ROMs"
-      menuMore = "More"
-      writtenBy = "by"
-      readMore = "Read more"
-      readOtherPosts = "More posts"
-      newerPosts = "Newer"
-      olderPosts = "Older"
-      minuteReadingTime = "min read"
-      dateFormatSingle = "2006-01-02"
-      dateFormatList = "2006-01-02"
+    subtitle = "Fast. Clean. Optimized."
+    keywords = "Magisk modules, Android development, custom ROMs"
+    menuMore = "More"
+    writtenBy = "by"
+    readMore = "Read more"
+    readOtherPosts = "More posts"
+    newerPosts = "Newer"
+    olderPosts = "Older"
+    minuteReadingTime = "min read"
+    dateFormatSingle = "2006-01-02"
+    dateFormatList = "2006-01-02"
 
       [languages.en.params.logo]
-        logoText = "G plus Unblocked"
-        logoHomeLink = "/"
+      logoText = "G plus Unblocked"
+      logoHomeLink = "/"
 
     [languages.en.menu]
-      [[languages.en.menu.main]]
-        identifier = "blog"
-        name = "My Blog"
-        url = "/blog/"
-        weight = 1
-
-      # Uncomment if needed
-      # [[languages.en.menu.main]]
-      #   identifier = "modules"
-      #   name = "Magisk Modules"
-      #   url = "/magisk-modules/"
-      #   weight = 2
 
       [[languages.en.menu.main]]
-        identifier = "Archive/"
-        name = "Archive"
-        url = "/archive/"
-        weight = 2
+      identifier = "blog"
+      name = "My Blog"
+      url = "/blog/"
+      weight = 1
+
+      [[languages.en.menu.main]]
+      identifier = "archive"
+      name = "Archive"
+      url = "/archive/"
+      weight = 2
 
       [[languages.en.menu.footer]]
-        identi
+      identifier = "about"
+      name = "About"
+      url = "/about/"
+      weight = 1
+
+      [[languages.en.menu.footer]]
+      identifier = "privacy"
+      name = "Privacy"
+      url = "/privacy/"
+      weight = 2
+
+      [[languages.en.menu.footer]]
+      identifier = "contact"
