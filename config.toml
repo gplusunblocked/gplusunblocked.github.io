@@ -1,7 +1,7 @@
 baseURL = "https://gplusunblocked.github.io/"
 languageCode = "en"
 defaultContentLanguage = "en"
-theme = "revws"
+
 buildFuture = true
 contentDir = "content"
 publishDir = "public"
