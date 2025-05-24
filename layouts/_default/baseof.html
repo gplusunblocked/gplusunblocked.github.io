@@ -1,23 +1,36 @@
 <!DOCTYPE html>
-<html lang="en"  data-bs-theme="auto">
-<head>
-{{ partial "meta/html.html" . }}
-<title>{{ .Page.Title | default .Site.Title }}</title>
-<!-- <title>LiteGapps</title> -->
-{{ partial "google/analytics.html" . }}
-{{ partial "meta/seo.html" . }}
-{{ partial "framework.html" . }}
-<link rel="shortcut icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}" />
-{{ partial "google/searchconsole.html" . }}
-{{ partial "ads/head.html" . }}
-</head>
-<body>
-{{ partial "navbar.html" . }}
-<main class="py-4 py-md-5">
-{{ block "main" . }}
+<html lang="{{ $.Site.Language }}">
+  <head>
+    {{ block "title" . }}
+      <title>
+        {{ if .IsHome }}{{ $.Site.Title }}{{ with $.Site.Params.Subtitle }} —
+        {{ . }}{{ end }}{{ else }}{{ .Title }} ::
+        {{ $.Site.Title }}{{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }}{{ end }}
+      </title>
+    {{ end }}
+    {{ partial "head.html" . }}
+  </head>
+  <body {{ with $.Site.Params.defaultTheme -}} class="{{ printf "%s-theme" . }}" {{- end }}>
+    <div class="container">
+      {{ partial "header.html" . }}
+
+      <div class="content">
+        {{ block "main" . }} {{ end }}
+      </div>
+
+      {{ block "footer" . }}
+        {{ partial "footer.html" . }}
+      {{ end }}
+    </div>
+
+{{ if $.Site.Params.googleAnalytics }}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ $.Site.Params.googleAnalytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ $.Site.Params.googleAnalytics }}');
+  </script>
 {{ end }}
-</main>
-{{ partial "js.html" . }} 
-{{ partial "footer.html" }}
-</body>
+  </body>
 </html>
