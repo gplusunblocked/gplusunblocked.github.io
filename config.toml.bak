@@ -1,4 +1,4 @@
-baseURL = "https://revwhiteshadow.gitlab.io"
+baseURL = "https://gplusunblocked.github.io"
 languageCode = "en"
 defaultContentLanguage = "en"
 theme = "revws"
@@ -20,9 +20,7 @@ publishDir = "public"
   logoText = "┌──(gsm㉿revWS)-"
   logoHomeLink = "/"
   footerLogoText = "└──(gsm㉿revWS)-"
- googleAnalytics = "UA-XXXXXX-X"  # Replace with your Google Analytics ID
-# Optional: Suppress raw HTML warning if needed
-ignoreLogs = ['warning-goldmark-raw-html']
+  googleAnalytics = "UA-XXXXXX-X"
 
 [languages]
   [languages.en]
@@ -52,18 +50,11 @@ ignoreLogs = ['warning-goldmark-raw-html']
         url = "/blog/"
         weight = 1
 
-  #    [[languages.en.menu.main]]
-   #     identifier = "modules"
-    #    name = "Magisk Modules"
-     #   url = "/magisk-modules/"
-      #  weight = 2
-
       [[languages.en.menu.main]]
-        identifier = "Archive/"
+        identifier = "Archive"
         name = "Archive"
         url = "/archive/"
         weight = 2
-
 
       [[languages.en.menu.footer]]
         identifier = "about"
@@ -80,17 +71,3 @@ ignoreLogs = ['warning-goldmark-raw-html']
       [[languages.en.menu.footer]]
         identifier = "contact"
         name = "Contact Us"
-        url = "/contact/"
-        weight = 3
-        
-        
-
-# ✅ Allow raw HTML (fix the warning)
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
-
-# ✅ Suppress raw HTML warning
-ignoreLogs = ['warning-goldmark-raw-html']
-
