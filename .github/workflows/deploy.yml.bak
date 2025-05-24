@@ -2,11 +2,12 @@ name: Deploy Hugo site to Pages
 
 on:
   push:
-    branches: [ main ]  # or your source branch
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
 
@@ -14,6 +15,7 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
+          extended: true  # ✅ Enable SCSS support
 
       - name: Build
         run: hugo --minify

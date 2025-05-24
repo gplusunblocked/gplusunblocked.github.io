@@ -1,27 +1,29 @@
-name: Deploy Hugo site to Pages
+name: Deploy Hugo site to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main  # Or change to 'master' if your default branch is 'master'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout source code
+        uses: actions/checkout@v4
 
-      - name: Setup Hugo
+      - name: Setup Hugo (Extended version)
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
-          extended: true  # ✅ Enable SCSS support
+          extended: true
 
-      - name: Build
+      - name: Build with Hugo
         run: hugo --minify
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Uses default secure GitHub Actions token
+          publish_dir: ./public                      # Hugo’s output folder
