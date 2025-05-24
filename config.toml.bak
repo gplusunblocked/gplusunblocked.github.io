@@ -42,7 +42,7 @@ ignoreLogs = ['warning-goldmark-raw-html']
       dateFormatList = "2006-01-02"
 
       [languages.en.params.logo]
-        logoText = "┌──(root㉿revWS)-"
+        logoText = "G plus Unblocked"
         logoHomeLink = "/"
 
     [languages.en.menu]
