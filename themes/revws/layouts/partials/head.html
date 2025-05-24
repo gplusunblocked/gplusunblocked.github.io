@@ -11,21 +11,19 @@
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="{{ .Permalink }}" />
 
-<!-- Custom head partial (prepended) -->
+<!-- head custom -->
 {{- partial "prepended_head.html" . }}
 
 <!-- Theme CSS -->
-{{ $style := resources.Get "css/style.scss" | css.Sass (dict "outputStyle" "compressed") | minify | fingerprint }}
+{{ $res := resources.Get "css/style.scss" }}
+{{ $style := $res | resources.ToCSS }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-
-<!-- Custom CSS to override theme properties -->
-{{ if resources.Get "style.css" }}
-  <link rel="stylesheet" href="{{ (resources.Get "style.css").RelPermalink }}" />
-{{ end }}
+<!-- Custom CSS to override theme properties (/static/style.css) -->
+<link rel="stylesheet" href="{{ "style.css" | absURL }}" />
 
 <!-- Icons -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ "img/apple-touch-icon-144-precomposed.png" | relURL }}" />
-<link rel="shortcut icon" href="{{ "img/favicon.png" | relURL }}" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ "img/apple-touch-icon-144-precomposed.png" | absURL }}" />
+<link rel="shortcut icon" href="{{ "img/favicon.png" | absURL }}" />
 
 <!-- Fonts -->
 <link href="{{ (resources.Get "fonts/Inter-Italic.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
@@ -38,13 +36,13 @@
 <!-- Twitter Card -->
 {{ template "_internal/twitter_cards.html" . }}
 
-<!-- OpenGraph -->
+<!-- OG data -->
 {{ template "_internal/opengraph.html" . }}
 
-<!-- RSS/JSON Feeds -->
+<!-- RSS | JSON -->
 {{ range .AlternativeOutputFormats -}}
   {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 {{ end -}}
 
-<!-- Custom head partial (appended) -->
+<!-- head custom -->
 {{- partial "extended_head.html" . }}
