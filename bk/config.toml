@@ -1,0 +1,73 @@
+baseURL = "https://gplusunblocked.github.io/"
+languageCode = "en"
+defaultContentLanguage = "en"
+
+buildFuture = true
+contentDir = "content"
+publishDir = "public"
+
+[pagination]
+  pagerSize = 5
+ 
+[params]
+  contentTypeName = "post"
+  defaultTheme = "dark"
+  showMenuItems = 3
+  showReadingTime = false
+  homeSubtitle = "Tech | Android | Custom ROMs | Optimization"
+  description = "revWhiteShadow is a Bangladeshi Android developer and modder known for creating custom Magisk modules, ROM tweaks, and performance enhancements. Focused on minimalism and speed."
+  recent_posts_number = 3
+  logoText = "┌──(gsm㉿revWS)-"
+  logoHomeLink = "/"
+  footerLogoText = "└──(gsm㉿revWS)-"
+  googleAnalytics = "UA-XXXXXX-X"
+
+[languages]
+  [languages.en]
+    title = "revWhiteShadow | Android Modding & Development"
+
+    [languages.en.params]
+      subtitle = "Fast. Clean. Optimized."
+      keywords = "Magisk modules, Android development, custom ROMs"
+      menuMore = "More"
+      writtenBy = "by"
+      readMore = "Read more"
+      readOtherPosts = "More posts"
+      newerPosts = "Newer"
+      olderPosts = "Older"
+      minuteReadingTime = "min read"
+      dateFormatSingle = "2006-01-02"
+      dateFormatList = "2006-01-02"
+
+      [languages.en.params.logo]
+        logoText = "┌──(root㉿revWS)-"
+        logoHomeLink = "/"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "blog"
+        name = "My Blog"
+        url = "/blog/"
+        weight = 1
+
+      [[languages.en.menu.main]]
+        identifier = "Archive"
+        name = "Archive"
+        url = "/archive/"
+        weight = 2
+
+      [[languages.en.menu.footer]]
+        identifier = "about"
+        name = "About"
+        url = "/about/"
+        weight = 1
+
+      [[languages.en.menu.footer]]
+        identifier = "privacy"
+        name = "Privacy"
+        url = "/privacy/"
+        weight = 2
+
+      [[languages.en.menu.footer]]
+        identifier = "contact"
+        name = "Contact Us"
