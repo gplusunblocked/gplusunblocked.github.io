@@ -1,16 +1,16 @@
 +++
 title = "Privacy Policy"
 date = "2025-04-18"
-author = "revWhiteShadow"
-description = "Privacy Policy for revwhitwshadow.gitlab.io, outlining how we collect, use, and protect your data."
-keywords = ["privacy policy", "data protection", "revWhiteShadow"]
+author = "d"
+description = "Privacy Policy for gplusunblocked.github.io, outlining how we collect, use, and protect your data."
+keywords = ["privacy policy", "data protection", "gplusunblocked.github.io"]
 +++
 
 # Privacy Policy
 
 Last updated: April 18, 2025
 
-At **revwhitwshadow.gitlab.io**, your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, and protect your information when you visit our website. By using this site, you agree to the terms outlined below.
+At **gplusunblocked.github.io**, your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, and protect your information when you visit our website. By using this site, you agree to the terms outlined below.
 
 ## 1. Information We Collect
 We may collect the following types of information:

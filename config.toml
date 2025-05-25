@@ -14,21 +14,21 @@ publishDir = "public"
   defaultTheme = "dark"
   showMenuItems = 3
   showReadingTime = false
-  homeSubtitle = "Tech | Android | Custom ROMs | Optimization"
-  description = "revWhiteShadow is a Bangladeshi Android developer and modder known for creating custom Magisk modules, ROM tweaks, and performance enhancements. Focused on minimalism and speed."
+  homeSubtitle = "Game | Unblocked Games | Classroom 6x "
+  description = "Discover how G Plus Unblocked lets you play your favorite browser games anywhere—school, work, or on mobile. Learn access tips, top games, safety advice, and troubleshooting."
   recent_posts_number = 3
-  logoText = "┌──(gsm㉿revWS)-"
+  logoText = "G Plus Unblocked"
   logoHomeLink = "/"
-  footerLogoText = "└──(gsm㉿revWS)-"
+  footerLogoText = "G Plus Unblocked"
   googleAnalytics = "UA-XXXXXX-X"
 
 [languages]
   [languages.en]
-    title = "revWhiteShadow | Android Modding & Development"
+    title = "G Plus Unblocked"
 
     [languages.en.params]
-      subtitle = "Fast. Clean. Optimized."
-      keywords = "Magisk modules, Android development, custom ROMs"
+      subtitle = "g"
+      keywords = "Game | Unblocked Games | Classroom 6x"
       menuMore = "More"
       writtenBy = "by"
       readMore = "Read more"
@@ -40,7 +40,7 @@ publishDir = "public"
       dateFormatList = "2006-01-02"
 
       [languages.en.params.logo]
-        logoText = "┌──(root㉿revWS)-"
+        logoText = "G Plus Unblocked"
         logoHomeLink = "/"
 
     [languages.en.menu]
@@ -71,3 +71,7 @@ publishDir = "public"
       [[languages.en.menu.footer]]
         identifier = "contact"
         name = "Contact Us"
+        url = "/contact/"
+        
+        
+        weight = 3
