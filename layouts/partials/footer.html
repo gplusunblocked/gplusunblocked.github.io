@@ -1,30 +1,31 @@
-<hr>
+<footer class="footer">
 
-<div class="container-fluid">
- <div class="MID-FOOTER">
-	<span><a href="https://youtube.com/channel/UCoqHuQ6CssiZCk3q4haOLUQ"><img src="/img/media/youtube.webp" alt="icon sosmed youtube" class="ICON-FOOTER"></img></a></span>
-	<span><a href="https://fb.me/litegapps"><img src="/img/media/facebook.webp" alt="icon sosmed facebook" class="ICON-FOOTER"></img></a></span>
-	<span><a href="https://t.me/litegapps"><img src="/img/media/telegram.webp" alt="icon sosmed telegram" class="ICON-FOOTER"></img></a></span>
-	<span><a href="https://twitter.com/litegapps"><img src="/img/media/twitter.webp" alt="icon sosmed twitter" class="ICON-FOOTER"></img></a></span>
-	<span><a href="https://www.tiktok.com/@litegapps"><img src="/img/media/tiktok.webp" alt="icon sosmed tiktok" class="ICON-FOOTER"></img></a></span>
-	<span><a href="https://xdaforums.com/t/litegapps-systemless-custom-gapps.4146013/"><img src="/img/media/xda.webp" alt="icon sosmed xda" class="ICON-FOOTER"></img></a></span>
-	<span><a href="https://github.com/litegapps"><img src="/img/media/github.webp" alt="icon sosmed github" class="ICON-FOOTER"></img></a></span>
-	<span><a href="https://paypal.me/wahyu6071"><img src="/img/media/paypal.webp" alt="icon sosmed paypal" class="ICON-FOOTER"></img></a></span>
-	<span><a href="mailto: litegapps@gmail.com"><img src="/img/media/email.webp" alt="icon sosmed email" class="ICON-FOOTER"></img></a></span>
- </div>
-</div>
+  <div class="footer__inner">
+    {{ if $.Site.Copyright }}
+      <div class="copyright copyright--user">{{ $.Site.Copyright | safeHTML }}</div>
+      {{ else }}
+      {{ partial "logo.html" . }}
+                <ul>
+  {{ range .Site.Menus.footer }}
+    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+  {{ end }}
+</ul>
+      <div class="copyright">
+        <span>© {{ now.Year }} revWhiteShadow <a href="https://github.com/white9shadow" target="_blank" rel="noopener"></a></span>
+
+      </div>
+      
 
 
-<footer>
-<hr>
-<div class="p_footer MID"><a href="https://androidroot.site">Android Root</a></div>
-<div class="p_footer MID"><a href="https://aethersx2.me">AetherSX2</a></div>
-<div class="p_footer MID"><a href="https://pcsx2.me">PCSX2</a></div>
-<div class="p_footer MID"><a href="https://winlator.me">Winlator</a></div>
-<div class="p_footer MID"><a href="https://dolphin27.gitlab.io">Dolphin Emulator</a></div>
-<div class="p_footer MID"><a href="https://ppsspp.info">ppsspp</a></div>
-<div class="p_footer MID"><a href="https://aethersx2.gitlab.io">aethersx2.gitlab.io</a></div>
-<div class="p_footer MID"><a href="https://ps2bios.site/">PS2 BIOS</a></div>
-<div class="p_footer MID"><a href="https://rpcsx3.me/">RPCS3</a></div>
-<div class="p_footer MID"><b>Copyright <span>&#169;</span> 2025 LiteGapps</b></div>
+    {{ end }}
+
+  </div>
 </footer>
+
+{{ $menu := resources.Get "js/menu.js" | js.Build }}
+{{ $prism := resources.Get "js/prism.js" | js.Build }}
+{{ $theme := resources.Get "js/theme.js" | js.Build }}
+{{ $bundle := slice $menu $prism $theme | resources.Concat "bundle.js" | resources.Minify }}
+<script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
+
+{{- partial "extended_footer.html" . }}
